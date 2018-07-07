@@ -13,7 +13,7 @@
 from main_process.automation_app.action_service.app_log import appLog
 __author__ = 'destiny'
 
-appLogin=appLog()
-logout_cursor=appLogin.driverapp_login('13900000000','aA111111')
-appLog.driverapp_logout(logout_cursor)
+# appLogin=appLog()
+# logout_cursor=appLogin.driverapp_login('13900000000','aA111111')
+# appLog.driverapp_logout(logout_cursor)
 
