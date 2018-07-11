@@ -1,22 +1,27 @@
 #coding = utf-8
 #This file named test_demo.py
 #his duty is to test some program.
+from time import strptime
+import datetime
 from basic_func.do_mysql.mysql_con import doVsMySQL
 import html
+ss=datetime.datetime.now()
+print(ss)
+# print(strptime(ss, '%Y.%m.%d-%H:%M:%S'))
 
 # Creates '<item size="large" quantity="6">Albatross</item>'
-def make_element(name,value,**attrs):
-    keyvlues=[' %s="%s"' % item for item in attrs.items()]
-    attr_str=''.join(keyvlues)
-    element='<{name}{attr_str}>{values}</{name}>'.format(
-        name=name,
-        attr_str=attr_str,
-        values=html.escape(value)
-    )
-    print(element)
-    return element
-
-make_element("item","Alibaba",size='large',quantity='6')
+# def make_element(name,value,**attrs):
+#     keyvlues=[' %s="%s"' % item for item in attrs.items()]
+#     attr_str=''.join(keyvlues)
+#     element='<{name}{attr_str}>{values}</{name}>'.format(
+#         name=name,
+#         attr_str=attr_str,
+#         values=html.escape(value)
+#     )
+#     print(element)
+#     return element
+#
+# make_element("item","Alibaba",size='large',quantity='6')
 
 # def main():
 #     return 1

@@ -14,6 +14,7 @@ desired_caps['appActivity'] = 'com.zhoupukuaisong.MainActivity'  # apk的launche
 desired_caps['appWaitActivity']='com.zhoupukuaisong.MainActivity'
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)          # 建立 session
 time.sleep(10)
+print(driver.find_element_by_xpath("//android.widget.EditText[contains(@text,'请输入账号')]").text)
 driver.find_element_by_xpath("//android.widget.EditText[contains(@text,'请输入账号')]").send_keys(u'13900000000')
 driver.find_elements_by_xpath("//android.widget.EditText")[1].send_keys(u'aA111111')
 driver.find_element_by_xpath("//android.widget.TextView[@text='登 录']").click()

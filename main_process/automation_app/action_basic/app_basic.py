@@ -22,6 +22,6 @@ class appBasic():
         app_d=app_driver.appDriver()
         desired_caps=app_d.driver_app_driver()
         driver=webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
-        print(driver)
+        # print(driver)
         return driver
 
