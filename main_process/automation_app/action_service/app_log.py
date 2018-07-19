@@ -10,6 +10,7 @@
                     2018/7/7 11:37
 --------------------------------------------------------------------
 """
+import string
 import time
 
 from main_process.automation_app.app_driver import app_driver
@@ -21,10 +22,16 @@ class appLog():
 
     def driverapp_login(self,count,pwd,driver):
         # print(type(driver))
-        time.sleep(10)
+        time.sleep(4)
         # print(driver.find_elements_by_xpath("//android.widget.EditText")[0])
         # print(driver.find_elements_by_xpath("//android.widget.EditText")[1])
-        driver.find_element_by_xpath("//android.widget.EditText[contains(@text,'请输入账号')]").send_keys(count)
+        # ccc=int(count)
+        # ppp=str(pwd)
+        # print(ccc)
+        # print(type(ccc))
+        # print(pwd)
+        # print(type(pwd))
+        driver.find_element_by_xpath("//android.widget.EditText[@text='请输入账号']").send_keys(count)
         driver.find_elements_by_xpath("//android.widget.EditText")[1].send_keys(pwd)
         driver.find_element_by_xpath("//android.widget.TextView[@text='登 录']").click()
         print('————司机app完成登录！————')
@@ -32,5 +39,3 @@ class appLog():
     def driverapp_logout(self,driver):
         print('————退出司机app！————')
         driver.quit()
-
-

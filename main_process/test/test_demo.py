@@ -1,12 +1,16 @@
 #coding = utf-8
 #This file named test_demo.py
 #his duty is to test some program.
+import time
 from time import strptime
 import datetime
 from basic_func.do_mysql.mysql_con import doVsMySQL
 import html
-ss=datetime.datetime.now()
+ss=datetime.datetime.now().__format__("%Y-%m-%d %H-%M-%S")
+
 print(ss)
+print(type(ss))
+# time.strftime("%Y-%m-%d %H-%M-%S",ss)
 # print(strptime(ss, '%Y.%m.%d-%H:%M:%S'))
 
 # Creates '<item size="large" quantity="6">Albatross</item>'
