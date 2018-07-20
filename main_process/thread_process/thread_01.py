@@ -24,10 +24,10 @@ class myThread_sign_01(threading.Thread):
         # self.counter = counter
 
     def run(self):
-        thread_refuse = {'platformName': 'Android', 'platformVersion': '4.4.2', 'deviceName': '127.0.0.1:62001',
-                         'appiumURL': 'http://192.168.1.82:4724/wd/hub'}
+        thread_refuse = {'platformName': 'Android', 'platformVersion': '5.1', 'deviceName': 'MT66-2WA-8F08195',
+                         'appiumURL': 'http://192.168.100.104:4724/wd/hub'}#127.0.0.1:62001 http://192.168.1.82:4724/wd/hub
         user_info = {'userName': '13711110001', 'password': '111111'}
-        print("开始线程：" + self.name+'夜神')
+        print("开始线程：" + self.name)
         snr = signAndRefuse()
         snr.sign_all_pay_cash(thread_refuse,user_info)
         print("退出线程：" + self.name)

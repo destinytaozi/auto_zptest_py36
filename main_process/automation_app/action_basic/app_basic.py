@@ -21,6 +21,6 @@ class appBasic():
     def driverapp_session_open(self,parameter):
         app_d=app_driver.appDriver()
         desired_caps=app_d.driver_app_driver(parameter['platformName'],parameter['platformVersion'],parameter['deviceName'])
-        driver=webdriver.Remote(parameter['appiumURL'], desired_caps)    #'http://localhost:4723/wd/hub'
+        driver=webdriver.Remote(parameter['appiumURL'], desired_caps)
         # print(driver)
         return driver,desired_caps
