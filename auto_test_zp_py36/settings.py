@@ -77,8 +77,14 @@ WSGI_APPLICATION = 'auto_test_zp_py36.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE':'django.db.backends.mysql',
+        'HOST':'192.168.2.219',
+        'PORT':'3306',
+        'NAME':'python_test',
+        'USER':'root',
+        'PASSWORD':'8uhb*IK<',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
