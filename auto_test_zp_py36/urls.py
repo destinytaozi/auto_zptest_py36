@@ -19,10 +19,10 @@ from django.urls import path
 from aha_test4dj import views
 
 urlpatterns = [
-    path('^admin/', admin.site.urls),
-    url(r'^index/',views.index),
-    url(r'^$/',views.index),
-    url(r'^account/login/$',views.index),
+    url(r'^admin/', admin.site.urls),
+    url(r'^index/$',views.index),
+    url(r'^$',views.index),
+    url(r'^accounts/login/$',views.index),
     url(r'^event_manage/$',views.event_manage),
     url(r'^login_action/$',views.login_action),
 ]

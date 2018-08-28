@@ -1,59 +1,73 @@
 #coding = utf-8
-#This file named test_demo.py
+#This file named test_01.py
 #his duty is to test some program.
-import time
-from time import strptime
-import datetime
-from basic_func.do_mysql.mysql_con import doVsMySQL
-import html
-ss=datetime.datetime.now().__format__("%Y-%m-%d %H-%M-%S")
+class Server:
+    services = [
+        {'active': False, 'protocol': 'ftp', 'port': 21},
+        {'active': True, 'protocol': 'ssh', 'port': 22},
+        {'active': True, 'protocol': 'http', 'port': 80},
+    ]
+    def __iter__(self):
+        for service in self.services:
+            if service['active']:
+                yield service['protocol'],service['port']
 
-print(ss)
-print(type(ss))
-# time.strftime("%Y-%m-%d %H-%M-%S",ss)
-# print(strptime(ss, '%Y.%m.%d-%H:%M:%S'))
+class InterableServer:
 
-# Creates '<item size="large" quantity="6">Albatross</item>'
-# def make_element(name,value,**attrs):
-#     keyvlues=[' %s="%s"' % item for item in attrs.items()]
-#     attr_str=''.join(keyvlues)
-#     element='<{name}{attr_str}>{values}</{name}>'.format(
-#         name=name,
-#         attr_str=attr_str,
-#         values=html.escape(value)
-#     )
-#     print(element)
-#     return element
-#
-# make_element("item","Alibaba",size='large',quantity='6')
+    def __init__(self):
+        self.current_pos = 0
+        self.services = Server.services
 
-# def main():
-#     return 1
-#     # url='192.168.1.206'
-#     # usrname='root'
-#     # password='qazWSX098'
-#     # dbBase='jianhu_zpwms'
-#     # sql01="SELECT goodsName,planNumber,realNumber,unitName,barcode " \
-#     #       "from t_stockout_plan_location WHERE batchCode='BCS001806060003' AND isDelete=0;"
-#     # my_sql = doVsMySQL()
-#     # sql_result=my_sql.query_close(url, usrname, password, dbBase, sql01)
-#     # goodsid=[]
-#     # goodsName=[]
-#     # packingRate=[]
-#     # planNumber=[]
-#     # realNumber=[]
-#     # unitName=[]
-#     # barcode=[]
-#     # print(sql_result)
-#     # #把sql里查询到的多行值存到数值里
-#     # for i in range(len(sql_result)):
-#     #     goods_name,plan_number,real_number,unit_name,_ = sql_result[i]
-#     #     goodsName.append(goods_name)
-#     #     planNumber.append(plan_number)
-#     #     realNumber.append(real_number)
-#     #     unitName.append(unit_name)
-#     #     print(goodsName[i],planNumber[i],realNumber[i],unitName[i])
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        while self.current_pos < len(self.services):
+            service = self.services[self.current_pos]
+            self.current_pos+=1
+            if service['active']:
+                return service['protocol'],service['port']
+        raise StopIteration
+    next = __next__
+
+InterableServer()
+for protocol,port in InterableServer():
+    print('service %s is running on port %d' % (protocol,port))
+
+# class Money:
+#     currency_rates = {
+#         '$':1.0,
+#         '£':0.7739,
+#         '€':0.88,
+#         '¥':6.8395,
+#     }
 #
+#     def __init__(self,symbol,amount):
+#         self.symbol = symbol
+#         self.amount = amount
 #
-# if __name__ == "__main__":
-#     main()
+#     def __repr__(self):
+#         print('%s%.2f'%(self.symbol,self.amount))
+#         return '%s%.2f'%(self.symbol,self.amount)
+#
+#     def __str__(self):
+#         return '%s%.2f'%(self.symbol,self.amount)
+#
+#     def convert(self,other):
+#         new_amount = (other.amount/self.currency_rates[other.symbol]*self.currency_rates[self.symbol])
+#         return Money(self.symbol,new_amount)
+#
+#     def __add__(self, other):
+#         new_amount = self.amount+self.convert(other).amount
+#         return Money(self.symbol,new_amount)
+#
+#     def transfor2Doll(self):
+#         new_amount = self.amount / self.currency_rates[self.symbol]
+#         return Money('$',new_amount)
+#
+# m1=Money('£',20)
+# m2=Money('¥',50)
+# m_sum=m1+m2
+# m_dollor=m_sum.transfor2Doll()
+# print(m_sum)
+# print(m_dollor)

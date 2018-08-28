@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'auto_test_zp_py36.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.mysql',
-        'HOST':'192.168.2.219',
+        'HOST':'192.168.31.219',
         'PORT':'3306',
         'NAME':'python_test',
         'USER':'root',

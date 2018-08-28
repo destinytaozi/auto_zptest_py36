@@ -1,4 +1,4 @@
-#!D:\04_others\workspace\python\auto_test_zp_py36\venv\Scripts\python.exe
+#!C:\Users\Destiny\PycharmProjects\auto_test_zp_py36\venv\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'pip==9.0.1','console_scripts','pip'
 __requires__ = 'pip==9.0.1'
 import re
