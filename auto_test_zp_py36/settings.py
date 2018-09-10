@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'aha_test4dj',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -78,11 +79,11 @@ WSGI_APPLICATION = 'auto_test_zp_py36.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.mysql',
-        'HOST':'192.168.31.219',
+        'HOST':'localhost',
         'PORT':'3306',
-        'NAME':'python_test',
+        'NAME':'test_py_aha_test4dj',
         'USER':'root',
-        'PASSWORD':'8uhb*IK<',
+        'PASSWORD':'1qaz!QAZ',
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
@@ -120,6 +121,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+APPEND_SLASH=False
 
 
 # Static files (CSS, JavaScript, Images)
